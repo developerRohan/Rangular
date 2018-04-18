@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './homepage.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -15,6 +15,8 @@ import { HomepageComponent } from './homepage.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [HomepageComponent] //starting point of the application
+  bootstrap: [
+    AppComponent
+  ] //starting point of the application
 })
 export class AppModule { }
