@@ -1,3 +1,20 @@
 <h1>create a new proposal</h1>
 
-<h2>{{proposal.portfolio_url}}</h2>
+<div>
+  <form #proposalForm="ngForm">
+    <div class="form-group">
+      <label for="customer">CustomerName</label>
+      <input 
+        type="text"
+        id="customer"
+        placeholder="Write company name"
+        [(ngModel)] = proposal.customer
+        name = "customer"
+        #customer = 'ngModel'
+        required
+      >
+    </div>
+  </form>
+</div>
+
+<h2>{{proposal.customer}}</h2>
