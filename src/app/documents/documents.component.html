@@ -1,10 +1,66 @@
-<h1>this is document page</h1>
+<div class="text-center">
+    <h1 class="headline">Documents Listing</h1>
+    <hr>
+  </div>
+  
+        <div *ngFor="let doc of documents">
+          
+          <div class="row ">
+            <div class="col-md-2">
 
-<div *ngFor="let doc of documents">
-  <h1>{{doc.title}}</h1>
-  <h2>{{doc.description}}</h2>
-  <h3><a href="{{doc.file_url}}">Download file</a></h3>
-  <h4>{{doc.updated_at}}</h4>
-  <h5>{{doc.image_url}}</h5>
-  <hr>
-</div>
+            </div>
+              <div class="col-md-4">
+                  <h5><img src="{{doc.image_url}}" class="size"></h5>
+              </div>
+              
+              <div class="col-md-6 border">
+                  <h2 class="headline">{{doc.title}}</h2>
+                  <h2 class="headline">{{doc.description}}</h2>
+                  <h2 class="headline"><a href="{{doc.file_url}}">Download file</a></h2>
+                  <h2 class="headline">{{doc.updated_at}}</h2>
+              </div>
+          </div>
+          
+      </div>
+    
+  
+    <!-- <div *ngFor="let doc of documents">
+      <h5><img src="{{doc.image_url}}" class="size"></h5>
+      <h2 class="headline">{{doc.title}}</h2>
+      <h2 class="headline">{{doc.description}}</h2>
+      <h2 class="headline"><a href="{{doc.file_url}}">Download file</a></h2>
+      <h2 class="headline">{{doc.updated_at}}</h2>
+      <hr>
+    </div> -->
+    
+
+
+
+
+ <!-- <div class='container'>
+    <h1 class="headline">Document Listing</h1>
+    <div class="col-sm-6">
+      <div class="card" *ngFor="let doc of documents">
+            <img class="card-img-top" src="{{ doc.image_url }}" alt="Card image cap" width="100%">
+          
+              <div class="card-block">
+                  <h4 class="card-title">{{ doc.title }}</h4>
+            
+                  <p class="card-text">{{ doc.description }}</p>
+            
+                  <div>
+                    <a class="btn btn-lg btn-primary" href="{{ doc.file_url }}">Download File</a>
+                  </div>
+            
+                  <p class="card-text"><small class="text-muted">{{ doc.updated_at }}</small></p>
+            
+                </div>
+            
+              </div>
+            
+            
+          </div>
+  </div> -->
+
+
+    

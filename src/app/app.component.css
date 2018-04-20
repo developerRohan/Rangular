@@ -1,0 +1,32 @@
+.body-top{
+  margin-top: 5px;
+}
+
+.bg { 
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  height:50%;
+  width:50%
+
+}
+
+.app-body {
+	margin-top: 80px;
+}
+
+.nav-styles {
+	background-color: #1a1b22;
+}
+
+.nav-styles a {
+	color: white;
+}
+
+.nav-styles a:hover {
+	color: #c9c9c9;
+}
+
+.nav-link.active {
+	color: #e64758 !important;
+}
