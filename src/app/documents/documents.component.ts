@@ -1,40 +1,38 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Document } from './document'
+import { Observable } from 'rxjs/RX';
+import { DocumentService } from './document.service'
 
 @Component({
   moduleId: module.id,
   selector: 'documents',
   templateUrl: 'documents.component.html',
-  styleUrls: ['documents.component.css']
+  styleUrls: ['documents.component.css'],
+  providers: [
+    DocumentService
+  ]
 }) 
 
 export class DocumentsComponent{
 
   documents: Document[];
+  errorMessage:string;
+  mode: 'Observable';
+  constructor(
+    private documentService: DocumentService
+  ){}
 
-  constructor(){
-    this.documents = [
-      {
-        title:"first title",
-        description:"first description",
-        file_url:"http://google.com",
-        updated_at:"11/02/18",
-        image_url:"https://www.breadandbuttermarketing.com.au/wp-content/uploads/2016/04/Freelancer.jpg"
-      },
-      {
-        title:"second title",
-        description:"second description",
-        file_url:"http://google.com",
-        updated_at:"11/02/18",
-        image_url:"https://www.breadandbuttermarketing.com.au/wp-content/uploads/2016/04/Freelancer.jpg"
-      },
-      {
-        title:"third title",
-        description:"third description",
-        file_url:"http://google.com",
-        updated_at:"11/02/18",
-        image_url:"https://www.breadandbuttermarketing.com.au/wp-content/uploads/2016/04/Freelancer.jpg"
-      }
-    ];
+  ngOnInit() {
+    let timer = Observable.timer(0, 5000);
+    timer.subscribe(() => this.getDocuments())
+  }
+
+  getDocuments() {
+    this.documentService.getDocuments()
+                        .subscribe(
+                          documents => this.documents = documents,
+                          error => this.errorMessage = <any>error
+                        )
+
   }
 }

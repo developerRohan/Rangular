@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { DocumentService } from './documents/document.service';
@@ -25,7 +26,8 @@ import { ProposalShowComponent } from './proposal/proposal-show.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [
     DocumentService
