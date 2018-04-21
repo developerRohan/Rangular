@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
+import { DocumentService } from './documents/document.service';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -26,7 +27,9 @@ import { ProposalShowComponent } from './proposal/proposal-show.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DocumentService
+  ],
   bootstrap: [
     AppComponent
   ] //starting point of the application
