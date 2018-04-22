@@ -17,7 +17,7 @@ export class DocumentsComponent{
 
   documents: Document[];
   errorMessage:string;
-  mode: 'Observable';
+  
   constructor(
     private documentService: DocumentService
   ){}

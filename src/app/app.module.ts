@@ -4,6 +4,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { DocumentService } from './documents/document.service';
+import { ProposalService } from './proposal/proposal.service';
+
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -30,7 +32,8 @@ import { ProposalShowComponent } from './proposal/proposal-show.component';
     HttpModule
   ],
   providers: [
-    DocumentService
+    DocumentService,
+    ProposalService
   ],
   bootstrap: [
     AppComponent
